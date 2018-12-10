@@ -1,0 +1,54 @@
+# Run this script from the command-line using the following command:
+# config run simple-config-ldap.txt
+
+# Before using this script you need to set the variables below:
+set DB_DRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver"
+set DB_URL = "jdbc:sqlserver://10.97.48.136:1433;DatabaseName=spotfire_docker711"
+set DB_USER = "tssdocker711"
+set DB_PASSWORD = "tssdocker711"
+set CONFIG_TOOL_PASSWORD = "spotfire"
+set ADMIN_USER = "spotfire"
+set ADMIN_PASSWORD = "spotfire"
+
+# To enable group synchronization:
+# 1. Set the LDAP_GROUP_SYNC_NAMES variable below and uncomment the line
+# 2. Uncomment the lines where the config-ldap-group-sync is being called
+#set LDAP_GROUP_SYNC_NAMES="<Account names or DNs of external groups to synchronize>"
+
+echo Creating the database connection configuration
+bootstrap --no-prompt --driver-class="${DB_DRIVER}" --database-url="${DB_URL}" --username="${DB_USER}" --password="${DB_PASSWORD}" --tool-password="${CONFIG_TOOL_PASSWORD}"
+echo
+
+echo Creating the default configuration
+create-default-config
+echo
+
+echo "Creating LDAP configuration '${LDAP_CONFIG_ID}'"
+create-ldap-config --id="${LDAP_CONFIG_ID}" --type="${LDAP_SERVER_TYPE}" \
+  --servers="${LDAP_SERVERS}" --context-names="${LDAP_CONTEXTS}" \
+  --username="${LDAP_USERNAME}" --password="${LDAP_PASSWORD}"
+echo
+
+#echo "Setting up group synchronization for LDAP configuration '${LDAP_CONFIG_ID}'"
+#config-ldap-group-sync --id="${LDAP_CONFIG_ID}" --group-sync-enabled="true" \
+#  --group-names="${LDAP_GROUP_SYNC_NAMES}"
+#echo
+
+echo "Setting up the User Directory for LDAP using LDAP configuration '${LDAP_CONFIG_ID}'"
+config-ldap-userdir --ldap-configs="${LDAP_CONFIG_ID}" \
+config-userdir --mode="ldap" --domain-name-style="dns"
+echo
+
+echo "Setting up BASIC Authentication for LDAP using LDAP configuration '${LDAP_CONFIG_ID}'"
+config-basic-ldap-auth --ldap-configs="${LDAP_CONFIG_ID}"
+config-auth --auth-method="BASIC" --jaas-ldap --default-domain="${DEFAULT_DOMAIN}"
+echo
+
+echo Importing the configuration
+import-config --tool-password="${CONFIG_TOOL_PASSWORD}" \
+  --comment="First config using LDAP for authentication and user directory"
+echo
+
+echo Promoting the user '${ADMIN_USER}' to administrator
+promote-admin --tool-password="${CONFIG_TOOL_PASSWORD}" --username="${ADMIN_USER}"
+echo
