@@ -1,0 +1,45 @@
+# Mon Dec 17 17:27:13 IST 2018
+# Replay feature output
+# ---------------------
+# This file was built by the Replay feature of InstallAnywhere.
+# It contains variables that were set by Panels, Consoles or Custom Code.
+
+#INSTALLER_UI: Set to silent for automated install
+INSTALLER_UI=silent
+
+#Installation Type
+#-----------------
+CHOSEN_FEATURE_LIST=Server
+CHOSEN_INSTALL_FEATURE_LIST=Server
+CHOSEN_INSTALL_SET=Solo
+
+#Installation Path
+#-----------------
+USER_INSTALL_DIR=/opt/TIBCO/statsvcs711
+
+#Service Name
+#------------
+SERVICE_NAME=TERR
+
+#Ports
+#-----
+PORT_SPSERVER=8080
+PORT_JMX=9004
+
+#Service URL
+#-----------
+SERVICE_URL=http://machinename:8080/TERR
+
+#Management User
+#---------------
+JMX_USER=admin
+JMX_PASSWORD=admin
+
+#TOMCAT_CONNECTOR: Specify either HTTP/1.1 or AJP to 
+#define the Tomcat connection protocol to place into 
+#the server.xml in the embedded Tomcat server.
+#The value that you specify is placed directly 
+#into the protocol attribute of the Connector 
+#element of USER_INSTALL_DIR/tomcat/conf/server.xml.
+TOMCAT_CONNECTOR=HTTP/1.1
+
