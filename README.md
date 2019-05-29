@@ -46,8 +46,8 @@ The folders in this repository contain the following files:
     * Dockerfile – Docker image build file
     * fixnmproperties.sh – batch file for startup of Node Manager Docker container that fixes the node manager machine name
     
-## Example Docker Build Scripts
-The following are example docker build and run scripts for the various components provided with these scripts:
+## Example Docker Build and Run Commands
+The following are example docker build and run commands for the various components provided with these scripts:
 
  * Spotfire Server - Windows
     * Docker build with config
