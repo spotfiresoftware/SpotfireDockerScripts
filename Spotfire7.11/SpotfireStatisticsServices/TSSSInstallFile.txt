@@ -19,7 +19,7 @@ USER_INSTALL_DIR=C:\\TIBCO\\statsvcs711
 
 #Service Name
 #------------
-SERVICE_NAME=SplusServer
+SERVICE_NAME=TERR
 
 #Ports
 #-----
@@ -33,7 +33,7 @@ TOMCAT_CONNECTOR_INPUT_BOOLEAN_2=0
 
 #Service URL
 #-----------
-SERVICE_URL=http://machinename:8080/SplusServer
+SERVICE_URL=http://machinename:8080/TERR
 
 #Management User
 #---------------
@@ -48,30 +48,30 @@ SERVICE_ACCOUNT_OTHER=0
 
 #Install
 #-------
--fileOverwrite_C\:\\TIBCO\\statsvcs711\\SplusServer\\Uninstall_SplusServer\\Uninstall_SplusServer.lax=Yes
--fileOverwrite_C\:\\TIBCO\\statsvcs711\\SplusServer\\Uninstall_SplusServer\\resource\\iawin64_x64.dll=Yes
--fileOverwrite_C\:\\TIBCO\\statsvcs711\\SplusServer\\Uninstall_SplusServer\\resource\\iawin32.dll=Yes
--fileOverwrite_C\:\\TIBCO\\statsvcs711\\SplusServer\\Uninstall_SplusServer\\resource\\win64_32_x64.exe=Yes
--fileOverwrite_C\:\\TIBCO\\statsvcs711\\SplusServer\\Uninstall_SplusServer\\resource\\remove.exe=Yes
--fileOverwrite_C\:\\TIBCO\\statsvcs711\\SplusServer\\Uninstall_SplusServer\\resource\\invoker.exe=Yes
--fileOverwrite_C\:\\TIBCO\\statsvcs711\\SplusServer\\splus.ico=Yes
--fileOverwrite_C\:\\TIBCO\\statsvcs711\\SplusServer\\version_info.txt=Yes
--fileOverwrite_C\:\\TIBCO\\statsvcs711\\SplusServer\\conf\\ldap.properties=Yes
--fileOverwrite_C\:\\TIBCO\\statsvcs711\\SplusServer\\conf\\log4j.properties=Yes
--fileOverwrite_C\:\\TIBCO\\statsvcs711\\SplusServer\\conf\\spserver.properties=Yes
--fileOverwrite_C\:\\TIBCO\\statsvcs711\\SplusServer\\conf\\database.properties=Yes
--fileOverwrite_C\:\\TIBCO\\statsvcs711\\SplusServer\\conf\\users.properties=Yes
--fileOverwrite_C\:\\TIBCO\\statsvcs711\\SplusServer\\data\\binaries\\TerrEngine.zip=Yes
--fileOverwrite_C\:\\TIBCO\\statsvcs711\\SplusServer\\data\\binaries\\SplusEngine.zip=Yes
--fileOverwrite_C\:\\TIBCO\\statsvcs711\\SplusServer\\db_scripts\\mysql.sql=Yes
--fileOverwrite_C\:\\TIBCO\\statsvcs711\\SplusServer\\db_scripts\\mssql.sql=Yes
--fileOverwrite_C\:\\TIBCO\\statsvcs711\\SplusServer\\db_scripts\\mssql_upgrade.sql=Yes
--fileOverwrite_C\:\\TIBCO\\statsvcs711\\SplusServer\\db_scripts\\oracle.sql=Yes
--fileOverwrite_C\:\\TIBCO\\statsvcs711\\SplusServer\\db_scripts\\oracle_upgrade.sql=Yes
--fileOverwrite_C\:\\TIBCO\\statsvcs711\\SplusServer\\docs\\relnotes.pdf=Yes
--fileOverwrite_C\:\\TIBCO\\statsvcs711\\SplusServer\\tomcat\\bin\\TSSS711SplusServer.exe=Yes
--fileOverwrite_C\:\\TIBCO\\statsvcs711\\SplusServer\\tomcat\\bin\\TSSS711SplusServerw.exe=Yes
--fileOverwrite_C\:\\TIBCO\\statsvcs711\\SplusServer\\tomcat\\webapps\\SplusServer.war=Yes
+-fileOverwrite_C\:\\TIBCO\\statsvcs711\\TERR\\Uninstall_SplusServer\\Uninstall_SplusServer.lax=Yes
+-fileOverwrite_C\:\\TIBCO\\statsvcs711\\TERR\\Uninstall_SplusServer\\resource\\iawin64_x64.dll=Yes
+-fileOverwrite_C\:\\TIBCO\\statsvcs711\\TERR\\Uninstall_SplusServer\\resource\\iawin32.dll=Yes
+-fileOverwrite_C\:\\TIBCO\\statsvcs711\\TERR\\Uninstall_SplusServer\\resource\\win64_32_x64.exe=Yes
+-fileOverwrite_C\:\\TIBCO\\statsvcs711\\TERR\\Uninstall_SplusServer\\resource\\remove.exe=Yes
+-fileOverwrite_C\:\\TIBCO\\statsvcs711\\TERR\\Uninstall_SplusServer\\resource\\invoker.exe=Yes
+-fileOverwrite_C\:\\TIBCO\\statsvcs711\\TERR\\splus.ico=Yes
+-fileOverwrite_C\:\\TIBCO\\statsvcs711\\TERR\\version_info.txt=Yes
+-fileOverwrite_C\:\\TIBCO\\statsvcs711\\TERR\\conf\\ldap.properties=Yes
+-fileOverwrite_C\:\\TIBCO\\statsvcs711\\TERR\\conf\\log4j.properties=Yes
+-fileOverwrite_C\:\\TIBCO\\statsvcs711\\TERR\\conf\\spserver.properties=Yes
+-fileOverwrite_C\:\\TIBCO\\statsvcs711\\TERR\\conf\\database.properties=Yes
+-fileOverwrite_C\:\\TIBCO\\statsvcs711\\TERR\\conf\\users.properties=Yes
+-fileOverwrite_C\:\\TIBCO\\statsvcs711\\TERR\\data\\binaries\\TerrEngine.zip=Yes
+-fileOverwrite_C\:\\TIBCO\\statsvcs711\\TERR\\data\\binaries\\SplusEngine.zip=Yes
+-fileOverwrite_C\:\\TIBCO\\statsvcs711\\TERR\\db_scripts\\mysql.sql=Yes
+-fileOverwrite_C\:\\TIBCO\\statsvcs711\\TERR\\db_scripts\\mssql.sql=Yes
+-fileOverwrite_C\:\\TIBCO\\statsvcs711\\TERR\\db_scripts\\mssql_upgrade.sql=Yes
+-fileOverwrite_C\:\\TIBCO\\statsvcs711\\TERR\\db_scripts\\oracle.sql=Yes
+-fileOverwrite_C\:\\TIBCO\\statsvcs711\\TERR\\db_scripts\\oracle_upgrade.sql=Yes
+-fileOverwrite_C\:\\TIBCO\\statsvcs711\\TERR\\docs\\relnotes.pdf=Yes
+-fileOverwrite_C\:\\TIBCO\\statsvcs711\\TERR\\tomcat\\bin\\TSSS711TERR.exe=Yes
+-fileOverwrite_C\:\\TIBCO\\statsvcs711\\TERR\\tomcat\\bin\\TSSS711TERRw.exe=Yes
+-fileOverwrite_C\:\\TIBCO\\statsvcs711\\TERR\\tomcat\\webapps\\TERR.war=Yes
 
 #Start Service
 #-------------

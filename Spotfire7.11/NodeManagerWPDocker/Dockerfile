@@ -5,7 +5,8 @@
 ## docker run -it -d -m 3GB --cpus=2 --name tsnmwp3gb tsnm_wp
 
 # Indicates that the windowsservercore image will be used as the base image.
-FROM microsoft/windowsservercore
+# Change this line if you want a different Windows base image
+FROM mcr.microsoft.com/windows/servercore:ltsc2016
 
 # Metadata indicating an image maintainer.
 MAINTAINER pmckinni@tibco.com
@@ -19,19 +20,18 @@ COPY fixnmproperties.ps1 C:/fixnmproperties.ps1
 COPY fixnmproperties.bat C:/fixnmproperties.bat
 
 # install Node Manager
-RUN nm-setup.exe /s /v"/qn /l*vx TSS_NM_install.log INSTALLDIR=\"C:\tibco\tsnm\7.11.0\" NODEMANAGER_REGISTRATION_PORT=9080 \
+RUN nm-setup.exe /s /v"/qn /l*vx TSS_NM_install.log INSTALLDIR=\"C:\tibco\tsnm\7.11.3\" NODEMANAGER_REGISTRATION_PORT=9080 \
     NODEMANAGER_COMMUNICATION_PORT=9443 SERVER_NAME=%tssname% SERVER_BACKEND_REGISTRATION_PORT=9080 SERVER_BACKEND_COMMUNICATION_PORT=9443"
 
-RUN copy \default.conf c:\tibco\tsnm\7.11.0\nm\config
+RUN copy \default.conf c:\tibco\tsnm\7.11.3\nm\config
 
 EXPOSE 9501
 EXPOSE 9443
 EXPOSE 9080
 
 ## Need to set service to manual start so that the final configuration can be done before starting
-RUN sc config "WpNmRemote7110" start=demand
+RUN sc config "WpNmRemote7113" start=demand
 
 # Sets a command or process that will run each time a container is run from the new image.
-##CMD cmd
 ## Need to modify nodemanager.properties file when docker container is created to have correct nodemanager host name
 CMD ["cmd", "/k", "/fixnmproperties.bat"]
