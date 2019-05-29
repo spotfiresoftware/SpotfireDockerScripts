@@ -1,11 +1,12 @@
 # Run this script from the command-line using the following command:
 # config run simple-config.txt
 
+#### TODO: BEFORE RUNNING THIS SCRIPT MAKE SURE TO UPDATE THE FOLLOWING VARIABLES FOR YOUR ENVIRONMENT
 # Before using this script you need to set the variables below:
 set DB_DRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver"
-set DB_URL = "jdbc:sqlserver://10.97.48.136:1433;DatabaseName=spotfire_docker711"
-set DB_USER = "tssdocker711"
-set DB_PASSWORD = "tssdocker711"
+set DB_URL = "jdbc:sqlserver://10.0.0.18:1433;DatabaseName=spotfire_server"
+set DB_USER = "spotfire_server"
+set DB_PASSWORD = "spotfire_server"
 set CONFIG_TOOL_PASSWORD = "spotfire"
 set ADMIN_USER = "spotfire"
 set ADMIN_PASSWORD = "spotfire"
