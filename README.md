@@ -7,6 +7,8 @@ The purpose of this information is to help one get started with using TIBCO Spot
 
 Please see the TIBCO Community article for more information - [TIBCO Spotfire Server Docker Scripts](https://community.tibco.com/wiki/tibco-spotfirer-server-docker-scripts)
 
+**NOTE: Any executable files, rpm files, and sdn (Spotfire deployment files) MUST be obtained from the TIBCO Software download site and are not provided as part of the GitHub files.**  For example, the Dockerfile for Spotifre Server for Windows references the setup-win64.exe, the Spotfire.Dxp.sdn and the tss_simpleconfig.txt file which are not in the directory downloaded from GitHub.  The setup-win64.exe file comes from the TIB_sfire_server_<version>_win.zip file available from the TIBCO Software download site.  The Spotfire.Dxp.sdn file is part of the TIB_sfire_deploy_<version>.zip file.  The tss_simpleconfig.txt file is part of the GitHub scripts but is in the SpotfireServerConfig directory.  Please see the referenced TIBCO Community article for more information.
+
 The folders in this repository contain the following files:
 * Spotfire7.11
   * NodeManagerASDocker
