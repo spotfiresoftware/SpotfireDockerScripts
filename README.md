@@ -1,6 +1,8 @@
 # SpotfireDockerScripts
 These directories include scripts for working with TIBCO Spotfire components in a Docker environment.  They are initial scripts tested within a non-enterprise environment.  
 
+NOTE: Containerization is not officially supported in TIBCO Spotfire at this time (November 28, 2018).  Containerization may be supported in the future.
+
 The scripts have been split into Spotfire7.11 and Spotfire10 directories.  The docker scripts in Spotfire7.11 should work with Spotfire 7.12 and earlier versions (they were tested with 7.11.3). The silent installation command changed in Spotfire 7.13 so the scripts in Spotfire10 should work with Spotfire 7.13 (they were tested with Spotfire 10.3.0).    In Spotfire Server 10.3, some of the directories where one finds the Spotfire scripts are different, thus the scripts for Spotfire 10.3 and Spotfire 10.2 also differ.  The Spotfire config.sh/config.bat command-line program is now in tomcat/spotfire-bin instead of tomcat/bin. 
 
 The purpose of this information is to help one get started with using TIBCO Spotfire Server and TIBCO Spotfire Node Manager with Docker Containers.  The Docker and Spotfire Server software may change overtime.  The testing in this document was done with Spotfire version 7.11 and 10 and Docker engine version 18.09.2 on Windows.  The Spotfire install scripts likely will not change much between versions, but one should be aware of this possibility.
