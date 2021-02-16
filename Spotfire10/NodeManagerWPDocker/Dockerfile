@@ -1,17 +1,43 @@
-# Dockerfile for NodeManager
-## use with - docker build -m 3GB -t tsnm_wp103 --build-arg tssname=d92b1f6414ee .
-### to create a container from the tsnm_wp103 image use
-### pass server name as arg 
-## docker run -it -d -m 3GB --cpus=2 --name tsnmwp3gb103 tsnm_wp103
+# Dockerfile for NodeManager - Web Player
+## 
+###  USING ENVIRONMENT VARIABLES
+## To Run Container need to pass TSSNAME and optionally NODENAME for Node Manager
+##  These names are used for communication between Spotfire Server and the Node Manager
+##
+#### Docker Build example:
+##
+## docker build -m 3GB -t tsnm_wp103 .
+##
+####### Docker run examples:
+##
+## pass server name as environment variable examples of docker run
+##
+## docker run -it -d --env TSSNAME=963f926d1ce0 --env NODENAME=<NODENAME> -m 4GB --cpus=2 --name tsnmwp4gb103 tsnm_wp103
+## 
+## docker run -it -d --env TSSNAME=4884594badbb -m 4GB --cpus=2 --name tsnmwp4gb103 tsnm_wp103
+##
+## **** ENVIRONMENT VARIABLES
+## *REQUIRED 
+##    	TSSNAME - must pass in TSSNAME for node to communicate with Spotfire Server.  Can be an server in the cluster.
+## 
+## *OPTIONAL
+##    	NODENAME - will use COMPUTERNAME if does not exist
+##
+
+#### NOTE REGARDING WINDOWS IMAGES
+## Currently as of July 2020 the Windows Server Core image (https://hub.docker.com/_/microsoft-windows-servercore)
+##  is missing a rendering device for Spotfire, specifically DLLs related to the Windows Advanced Rasterization Platform (WARP) device.
+## One can use the Windows image (https://hub.docker.com/_/microsoft-windows) which is larger.  
+##
 
 # Indicates that the windowsservercore image will be used as the base image.
 # Change this line if you want a different Windows base image
-FROM mcr.microsoft.com/windows/servercore:ltsc2016
+## Specific image version must match version of host operating system
+##
+FROM mcr.microsoft.com/windows:1903
 
 # Metadata indicating an image maintainer.
 MAINTAINER pmckinni@tibco.com
-
-ARG tssname
 
 # Copy over files that are needed
 COPY nm-setup.exe c:/nm-setup.exe
@@ -20,16 +46,16 @@ COPY fixnmproperties.ps1 C:/fixnmproperties.ps1
 COPY fixnmproperties.bat C:/fixnmproperties.bat
 
 # install Node Manager
-RUN nm-setup.exe INSTALLDIR="C:\tibco\tsnm\10.3.0" NODEMANAGER_REGISTRATION_PORT=9080 NODEMANAGER_COMMUNICATION_PORT=9443 SERVER_NAME=%tssname% SERVER_BACKEND_REGISTRATION_PORT=9080 SERVER_BACKEND_COMMUNICATION_PORT=9443 -silent -log C:\TSS_NM_install.log
+RUN nm-setup.exe INSTALLDIR="C:\tibco\tsnm\10.3.9" NODEMANAGER_REGISTRATION_PORT=9080 NODEMANAGER_COMMUNICATION_PORT=9443 SERVER_NAME=PLACEHOLDER SERVER_BACKEND_REGISTRATION_PORT=9080 SERVER_BACKEND_COMMUNICATION_PORT=9443 -silent -log C:\TSS_NM_install.log
 
-RUN copy \default.conf c:\tibco\tsnm\10.3.0\nm\config
+RUN copy \default.conf c:\tibco\tsnm\10.3.9\nm\config
 
 EXPOSE 9501
 EXPOSE 9443
 EXPOSE 9080
 
 ## Need to set service to manual start so that the final configuration can be done before starting
-RUN sc config "WpNmRemote1030" start=demand
+RUN sc config "WpNmRemote1039" start=demand
 
 # Sets a command or process that will run each time a container is run from the new image.
 ##CMD cmd

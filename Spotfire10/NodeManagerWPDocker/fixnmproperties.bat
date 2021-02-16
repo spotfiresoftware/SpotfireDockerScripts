@@ -3,7 +3,7 @@ REM Update Path to config if needed
 
 PUSHD .
 
-cd \tibco\tsnm\10.3.0\nm\config
+cd \tibco\tsnm\10.3.9\nm\config
 
 REM ONLY perform the action if the nodemanager has not already started
 
