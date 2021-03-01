@@ -113,7 +113,7 @@ The following are example docker build and run commands for the various componen
       * Updated 7.11 scripts to 7.11.3
       * Updated Spotfire10 scripts to 10.3 to handle changes in directory structure and additional TERR Node Manager
       * Added additional Linux scripts for TSSS and Node Manager for the TERR service
-  6. February 2020
+  6. February 2021
       * Container images are now just the installation of the software.
       * All configuration is now done conditionally in the container startup scripts.  Please review to see environment variables that need to be set, especially the Spotfire Server scripts.
     
