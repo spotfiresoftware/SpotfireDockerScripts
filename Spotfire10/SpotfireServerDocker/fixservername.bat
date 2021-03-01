@@ -6,17 +6,17 @@ REM Script will determine if configuration is needed or not
 REM **** ENVIRONMENT VARIABLES
 REM *REQUIRED 
 REM    	DB_DRIVER="com.microsoft.sqlserver.jdbc.SQLServerDriver" 
-REM    	DB_URL="jdbc:sqlserver://172.31.14.28:1433;DatabaseName=spotfire1039_docker" 
-REM    	DB_USER="spotfire1039" 
-REM    	DB_PASSWORD="spotfire1039"
-REM    	CONFIG_TOOL_PASSWORD="spotfire"
-REM		ADMIN_USER="spotfire"
-REM		ADMIN_PASSWORD="spotfire"
+REM    	DB_URL="jdbc:sqlserver://machine:1433;DatabaseName=databasename" 
+REM    	DB_USER="db_user" 
+REM    	DB_PASSWORD="db_password"
+REM    	CONFIG_TOOL_PASSWORD="config-password"
+REM    	ADMIN_USER="admin-user"
+REM    	ADMIN_PASSWORD="admin-password"
 REM 
 REM *OPTIONAL
 REM    	TSSNAME - will use COMPUTERNAME if does not exist
-REM		DEPLOY_TERR - true or false
-REM		SET_AUTO_TRUST - false or default of true
+REM    	DEPLOY_TERR - true or false
+REM    	SET_AUTO_TRUST - false or default of true
 
 setlocal EnableDelayedExpansion
 

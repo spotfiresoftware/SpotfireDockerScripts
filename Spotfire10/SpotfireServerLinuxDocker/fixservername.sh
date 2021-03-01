@@ -7,17 +7,17 @@
 # **** ENVIRONMENT VARIABLES
 # *REQUIRED 
 #    	DB_DRIVER="com.microsoft.sqlserver.jdbc.SQLServerDriver" 
-#    	DB_URL="jdbc:sqlserver://172.31.14.28:1433;DatabaseName=spotfire1039_docker" 
-#    	DB_USER="spotfire1039" 
-#    	DB_PASSWORD="spotfire1039"
-#    	CONFIG_TOOL_PASSWORD="spotfire"
-#		ADMIN_USER="spotfire"
-#		ADMIN_PASSWORD="spotfire"
+#    	DB_URL="jdbc:sqlserver://machine:1433;DatabaseName=databasename" 
+#    	DB_USER="db_user" 
+#    	DB_PASSWORD="db_password"
+#    	CONFIG_TOOL_PASSWORD="config-password"
+#    	ADMIN_USER="spotfire-admin-user"
+#    	ADMIN_PASSWORD="spotfire-admin-password"
 # 
 # *OPTIONAL
-#    	TSSNAME - will use COMPUTERNAME if does not exist
-#		DEPLOY_TERR - true or false
-#		SET_AUTO_TRUST - false or default of true
+#    	TSSNAME - will use `hostname -I` if does not exist
+#    	DEPLOY_TERR - true or false
+#    	SET_AUTO_TRUST - false or default of true
 
 # Make sure to Update the path and the service name if installing a new version
 
