@@ -1,4 +1,9 @@
 # SpotfireDockerScripts
+
+## These scripts are now replaced by the [Cloud Deployment Kit for TIBCO Spotfire](https://github.com/TIBCOSoftware/spotfire-cloud-deployment-kit).  Please use the Spotfire CDK scripts as they include Dockerfiles and helm charts for Kubernetes.
+
+## THESE ARE OBSOLETE
+
 These directories include scripts for working with TIBCO Spotfire components in a Docker environment.  They are initial scripts tested within a non-enterprise environment.  
 
 The scripts have been split into Spotfire7.11 and Spotfire10 directories.  The docker scripts in Spotfire7.11 should work with Spotfire 7.12 and earlier versions (they were tested with 7.11.3). The silent installation command changed in Spotfire 7.13 so the scripts in Spotfire10 should work with Spotfire 7.13 (they were tested with Spotfire 10.3.0).    In Spotfire Server 10.3, some of the directories where one finds the Spotfire scripts are different, thus the scripts for Spotfire 10.3 and Spotfire 10.2 also differ.  The Spotfire config.sh/config.bat command-line program is now in tomcat/spotfire-bin instead of tomcat/bin. 
