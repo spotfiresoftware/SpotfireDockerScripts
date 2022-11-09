@@ -1,8 +1,6 @@
 # SpotfireDockerScripts
 
-## These scripts are now replaced by the [Cloud Deployment Kit for TIBCO Spotfire](https://github.com/TIBCOSoftware/spotfire-cloud-deployment-kit).  Please use the Spotfire CDK scripts as they include Dockerfiles and helm charts for Kubernetes.
-
-## THESE ARE OBSOLETE
+## These scripts are now replaced by the [Cloud Deployment Kit for TIBCO Spotfire](https://github.com/TIBCOSoftware/spotfire-cloud-deployment-kit).  Please use the CDK recipes as they include Dockerfiles and helm charts for Kubernetes.  The Cloud Deployment Kit for TIBCO Spotfire works with Spotfire version 12.0 and above.  If you have to use containers, these scripts could be utilized for versions prior to Spotfire 12, but the recommendation is to upgrade to Spotfir 12.0 and use the CDK.
 
 These directories include scripts for working with TIBCO Spotfire components in a Docker environment.  They are initial scripts tested within a non-enterprise environment.  
 
